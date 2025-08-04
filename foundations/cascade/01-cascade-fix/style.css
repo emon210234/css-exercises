@@ -2,10 +2,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.para,
-.small-para {
+/* START */
+
+    /* 1. Among these three, the second decleration block has the highest priority because it has*/
+    /* greater number of class selectors */
+    /* 2. Secondly, both the .para and .small-para selectors have the same precedence because */
+    /* no specificity rule applies to this and that's why the last decleration is the winner */
+    /* 3. Finally the .para decleration block is applied to it */
+.para {
   color: hsl(0, 0%, 0%);
   font-weight: 800;
+}
+
+.para,
+.small-para {
+  font-size: 22px;
 }
 
 .small-para {
@@ -13,30 +24,41 @@ body {
   font-weight: 800;
 }
 
-.para {
-  font-size: 22px;
-}
 
-.confirm {
+/* END */
+
+/* START */
+
+    /* Here both no specificity is applied because of both rules have only one class */
+    /* Can be fixed using ID selectors */
+
+#confirm-button  {
   background: green;
   color: white;
   font-weight: bold;
 } 
 
-.button {
+.button #cancel-button {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-size: 20px;
 }
 
-.child {
+/* END */
+
+/* START */
+
+
+.text.child {
   color: rgb(0, 0, 0);
-  font-weight: 800;
   font-size: 14px;
+  font-weight: 800;
 }
 
-div.text {
+.text {
   color: rgb(0, 0, 0);
   font-size: 22px;
   font-weight: 100;
 }
+
+/* END */
